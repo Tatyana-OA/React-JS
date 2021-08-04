@@ -1,17 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDom from 'react-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//Creating a component. Always return JSX
+function Greeting(){
+	return (
+		// Fragment doesnt create a div in the elements
+		<React.Fragment>
+			<div className='a-class'>
+			<h3>Hello, world!</h3>
+			<ul>
+				<li>List Item 1</li>
+				<li>List Item 2</li>
+		<img />
+		<input />
+			</ul>
+		</div>
+		</React.Fragment>
+	);
+	//return React.createElement('h1, {}, 'hello world');
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Rendering a component inside of another component
+// const Greeting = () => {
+// 	return React.createElement('div', {}, React.createElement('h2', {}, 'An h1 inside of a div'))
+// }
+
+
+//Rendering the component into root in index.html
+ReactDom.render(<Greeting />, document.getElementById('root'));
