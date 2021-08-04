@@ -33,6 +33,8 @@ function Booklist(){
 }
 
 const Book = (props) => {
+	//can be destructured
+	// const {img,title,author} = props
 	return <article className = 'book'>
 		<img src={props.img} alt="" />;
 		<h4>Title:{props.title}</h4>
